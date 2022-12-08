@@ -1,0 +1,17 @@
+{% extends 'layout.html' %}
+{% block content %}
+
+<h1>post</h1>
+{% for post in posts %}
+
+    <h2 href="{{post.title_proj}}"></h2>
+   
+    <p>{{post.description|truncatechars:200}}</p>
+    <p>{{ost.date|date:'M d Y'|upper}}</p>
+    <img src="{{post.image.url}}" alt="{{post.title_proj}}">
+
+    <a href="{% url 'weblog:post_detail' post.id %}">{{post.title_proj}}</a>
+
+
+{% endfor %}
+{% endblock %}
